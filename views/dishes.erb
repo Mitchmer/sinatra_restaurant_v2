@@ -1,0 +1,21 @@
+<h1>App Ideas</h1>
+<div>
+  <% @dishes.each do |dish| %>
+    <div>
+      <div>
+        <div>
+          <span><%= dish.title %></span>
+          <p><%= dish.price %></p>
+          <p><%= dish.description %></p>
+        </div>
+        <div>
+          <a href="/dishes/<%= dish.id %>/edit">Edit</a>
+          <form action="/dishes/<%= dish.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
